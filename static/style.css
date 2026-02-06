@@ -1,0 +1,138 @@
+
+body.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+h1, h3 { margin: 6px; }
+
+.love-names {
+    font-size: 32px;
+    animation: pulse 1.5s infinite;
+    color: #b30059;
+}
+
+.plea-text {
+    margin-top: 8px;
+    font-size: 16px;
+    color: #7a003c;
+}
+
+.btn-box {
+    margin-top: 20px;
+    position: relative;
+    width: 280px;
+    height: 180px;
+}
+
+button {
+    padding: 12px 26px;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.yes-btn { background-color: #e60000; color: white; }
+.no-btn  { background-color: #777; color: white; position: absolute; }
+
+/* Yay animation */
+.yay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    font-size: 42px;
+    font-weight: bold;
+    color: #e60000;
+    background: rgba(255,255,255,0.9);
+    padding: 16px 26px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    z-index: 9999;
+}
+
+.hidden { display: none; }
+
+.pop {
+    animation: pop 0.9s ease forwards;
+}
+
+/* Centered big sticker */
+.teddy-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 35vh;
+    margin: 10px 0 20px;
+}
+
+.single-teddy {
+    width: 260px;   /* increase size here if needed */
+    max-width: 90%;
+}
+
+/* Floating hearts */
+.hearts span {
+    position: fixed;
+    bottom: -50px;
+    animation: floatUp 6s linear infinite;
+    font-size: 22px;
+}
+
+.hearts span:nth-child(1) { left: 10%; animation-delay: 0s; }
+.hearts span:nth-child(2) { left: 30%; animation-delay: 1s; }
+.hearts span:nth-child(3) { left: 50%; animation-delay: 2s; }
+.hearts span:nth-child(4) { left: 70%; animation-delay: 3s; }
+.hearts span:nth-child(5) { left: 90%; animation-delay: 4s; }
+
+/* Animations */
+@keyframes floatUp {
+    from { transform: translateY(0); opacity: 1; }
+    to   { transform: translateY(-600px); opacity: 0; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pop {
+    0%   { transform: translate(-50%, -50%) scale(0.4); opacity: 0; }
+    60%  { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+/* Shake for No button */
+@keyframes shake {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(-3px, 2px) rotate(-2deg); }
+    50% { transform: translate(3px, -2px) rotate(2deg); }
+    75% { transform: translate(-3px, 2px) rotate(-2deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.no-btn.shake { animation: shake 0.25s ease-in-out; }
+
+/* Love note */
+.love-note {
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 15px;
+    border-radius: 12px;
+    margin: 16px 10px 30px;
+    font-size: 14px;
+    line-height: 1.6;
+    max-height: 40vh;
+    overflow-y: auto;
+}
